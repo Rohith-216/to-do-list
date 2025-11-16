@@ -1,0 +1,149 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --success: #10b981;
+}
+
+/* Page layout */
+body {
+  background: var(--bg);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 720px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+  padding: 28px;
+}
+
+/* Title */
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 1rem;
+  outline: none;
+}
+
+#taskInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.08);
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:active { transform: translateY(1px); }
+
+/* message */
+.msg {
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #eef2ff;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+/* Completed tasks */
+.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+/* Buttons on each task */
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background .12s ease;
+}
+
+.icon-btn:hover { background: rgba(15,23,42,0.04); }
+
+.remove-btn {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* small icon styling (simple text icons for clarity) */
+.icon {
+  font-size: 0.95rem;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 520px) {
+  .input-area { flex-direction: column; }
+  .btn { width: 100%; }
+}

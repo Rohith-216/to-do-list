@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">My To-Do List</h1>
+
+    <!-- Input area -->
+    <section class="input-area" aria-label="Add new task">
+      <input id="taskInput" type="text" placeholder="Add a new task..." aria-label="Task description" />
+      <button id="addBtn" class="btn">Add</button>
+    </section>
+
+    <!-- Status / feedback -->
+    <p id="msg" class="msg" aria-live="polite"></p>
+
+    <!-- Tasks list -->
+    <section class="list-area" aria-label="Tasks">
+      <ul id="taskList" class="task-list" role="list"></ul>
+    </section>
+
+    <!-- Footer / small tips -->
+    <footer class="footer">
+      <small>Tip: Press Enter to add. Click a task to toggle complete. Use the trash button to remove.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
